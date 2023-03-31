@@ -63,7 +63,6 @@ void drawNumber(GLfloat x, GLfloat y, GLfloat radius, int multiplier, int increa
 void drawIndicator(GLfloat x1, GLfloat y1, GLfloat x2, GLfloat y2, GLfloat radius){
 	glColor3ub(236, 50, 5);
 	sprite.drawCircle(x1, y1, 12, true);
-
 	sprite.drawLine(x1, y1, x2, y2, 5);
 
 	black();
