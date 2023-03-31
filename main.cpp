@@ -48,14 +48,10 @@ void drawNumber(GLfloat x, GLfloat y, GLfloat radius, int multiplier, int increa
 	int number = max;
 	
 	for(GLfloat angle = 0 - 70; angle <= 320 - 70; angle += 20 * multiplier){
-		
 		stringstream ss;
 		ss << number;
-		
 		string str_number = ss.str();
-
 		sprite.drawText(str_number.data(), str_number.size() , radius * cos(angle * 0.0174532f) + x, radius * sin(angle*0.0174532f) + y, GLUT_BITMAP_HELVETICA_18);
-		
 		number = number - increasement;
 	}
 }
@@ -92,13 +88,10 @@ void drawTemperatureBar(GLfloat offset, GLfloat thickness){
 
 void render(){
 	glClearColor(0.0f, 0.0f, 0.0f, 0.0f);
-	
 	glMatrixMode(GL_PROJECTION);
 	glLoadIdentity();
 	gluOrtho2D(0, 1200, 0, 750);
-	
 	glClear(GL_COLOR_BUFFER_BIT);
-	
 	glMatrixMode(GL_MODELVIEW);
 	glLoadIdentity();
 	
