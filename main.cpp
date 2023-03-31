@@ -15,16 +15,16 @@ string text;
 GLfloat temp_offset;
 
  void red(){glColor3ub(255, 0, 0);}
- void orange(){glColor3ub(255, 160, 0);}
+ void orange(){glColor3ub(255, 223, 0);}
  void yellow(){glColor3ub(255, 255, 0);}
  void green(){glColor3ub(0, 255, 0);}
  void blue(){glColor3ub(0, 0, 255);}
  void white(){glColor3ub(255, 255, 255);}
  void black(){glColor3ub(0, 0, 0);}
- void light_red(){glColor3ub(255, 153, 153);}
- void dark_red(){glColor3ub(178, 0, 0);}
+ void light_red(){glColor3ub(255, 183, 153);}
+ void dark_red(){glColor3ub(190, 0, 0);}
  void light_orange(){glColor3ub(255, 200, 0);}
- void light_blue(){glColor3ub(182, 196, 234);}
+ void light_blue(){glColor3ub(182, 196, 255);}
 
 void simplify_drawQuad(GLfloat left, GLfloat bottom, GLfloat right, GLfloat top){
 	GLfloat loc_bottom = 750 - bottom;
@@ -123,6 +123,7 @@ void render(){
 	sprite.drawCircle(980, 750 - 210, 175, false);
 	sprite.drawArc(210, 750 - 210, 0.67, 1, 260);
 	sprite.drawArc(980, 750 - 210, 0.67, 1, 260);
+	
 	red();
 	sprite.drawArc(210, 750 - 210, 0.7, 12, 0);
 	sprite.drawArc(980, 750 - 210, 0.7, 12, 20);
@@ -142,6 +143,7 @@ void render(){
 	red();
 	drawIndicator(210, 750 - 210, 160, 750 - 340, 248);
 	drawIndicator(980, 750 - 210, 930, 750 - 340, 248);
+	
 	green();
 	sprite.drawTriangle(380, 750 - 410, 380, 750 - 370, 340, 750 - 390, true);
 	sprite.drawTriangle(800, 750 - 410, 800, 750 - 370, 840, 750 - 390, true);
@@ -155,6 +157,7 @@ void render(){
 	sprite.drawText(text.data(), text.size(), 1130, 750 - 475, GLUT_BITMAP_HELVETICA_18);
 	text = "15540";
 	sprite.drawText(text.data(), text.size(), 1060, 750 - 475, GLUT_BITMAP_HELVETICA_18);
+	
 	orange();
 	text = "Engine Temperature";
 	sprite.drawText(text.data(), text.size(), 1010, 750 - 525, GLUT_BITMAP_HELVETICA_12);
@@ -162,12 +165,15 @@ void render(){
 	sprite.drawText(text.data(), text.size(), 1130, 750 - 550, GLUT_BITMAP_HELVETICA_18);
 	text = "90";
 	sprite.drawText(text.data(), text.size(), 1090, 750 - 550, GLUT_BITMAP_HELVETICA_18);
+	
 	blue();
 	text = "C";
 	sprite.drawText(text.data(), text.size(), 1018, 750 - 620, GLUT_BITMAP_HELVETICA_18);
+	
 	red();
 	text = "H";
 	sprite.drawText(text.data(), text.size(), 1138, 750 - 620, GLUT_BITMAP_HELVETICA_18);
+	
 	black();
 	text = "Fuel Level";
 	sprite.drawText(text.data(), text.size(), 830, 750 - 450, GLUT_BITMAP_HELVETICA_12);
@@ -180,10 +186,12 @@ void render(){
 	orange();
 	sprite.drawLine(1018, 750 - 600, 1148, 750 - 600, 2);
 	drawTemperatureBar(25, 10);
+	
 	black();
 	for(int n = 0;n < 8 * 20;n = n + 20){
 		sprite.drawLine(910, 750 - 489 - n, 970, 750 - 489 - n, 15);
 	}
+	
 	black();
 	sprite.drawLine(595, 750 - 365, 595, 750 - 35, 10);
 	sprite.drawLine(470, 750 - 236, 680, 750 - 236, 10);
@@ -191,12 +199,15 @@ void render(){
 	sprite.drawLine(568, 750 - 120, 730, 750 - 120, 10);
 	glColor3ub(142, 142, 142);
 	sprite.drawCircle(470, 750 - 70, 24, true);
+	
 	red();
 	sprite.drawTriangle(460, 750 - 85, 480, 750 - 85, 470, 750 - 65, true);
 	text = "N";
 	sprite.drawText(text.data(), text.size(), 465, 750 - 60, GLUT_BITMAP_HELVETICA_12);
+	
 	orange();
 	sprite.drawLine(595, 750 - 330, 595, 750 - 35, 6);
+	
 	red();
 	sprite.drawTriangle(580, 750 - 340, 610, 750 - 340, 595, 750 - 310, true);
 	
@@ -216,6 +227,7 @@ void render(){
 	sprite.drawPoint(720 - temp_offset, 750 - 530, 8);
 	sprite.drawPoint(720 - temp_offset, 750 - 515, 8);
 	sprite.drawPoint(720 - temp_offset, 750 - 500, 8);
+	
 	text = "10:10 AM";
 	sprite.drawText(text.data(), text.size(), 640, 750 - 610, GLUT_BITMAP_HELVETICA_18);
 	sprite.drawLine(638, 750 - 620, 720, 750 - 620, 2);
@@ -229,10 +241,13 @@ void render(){
 	sprite.drawText(text.data(), text.size(), 450, 750 - 550, GLUT_BITMAP_HELVETICA_18);
 	text = "Fan Level";
 	sprite.drawText(text.data(), text.size(), 450, 750 - 580, GLUT_BITMAP_HELVETICA_12);
+	
 	for(int n = 0; n <= 120; n=n+30){
 		sprite.drawLine(460 + n, 750 - 610, 460 + n, 750 - 590, 20);
 	}
+	
 	sprite.drawLine(450, 750 - 620, 590, 750 - 620, 2);
+	
 	orange();
 	sprite.drawTriangle(440, 750 - 390, 440, 750 - 420, 470, 750 - 405, true);
 	sprite.drawLine(480, 750 - 410, 640, 750 - 410, 4);
@@ -249,8 +264,10 @@ void render(){
 	sprite.drawText(text.data(), text.size(), 650, 750 - 410, GLUT_BITMAP_HELVETICA_12);
 	text = "Local";
 	sprite.drawRect(648, 750 - 427, 34, 14);
+	
 	black();
 	sprite.drawText(text.data(), text.size(), 650, 750 - 425, GLUT_BITMAP_HELVETICA_12);
+	
 	orange();
 	text = "Volume";
 	sprite.drawText(text.data(), text.size(), 700, 750 - 393, GLUT_BITMAP_HELVETICA_12);
@@ -261,42 +278,54 @@ void render(){
 	orange();
 	sprite.drawRect(310, 750 - 635, 45, 60);
 	sprite.drawRect(305, 750 - 635, 54, 10);
+	
 	black();
 	sprite.drawRect(314, 750 - 605, 38, 25);
+	
 	black();
 	sprite.drawRect(844, 750 - 565, 30, 40);
 	sprite.drawRect(839, 750 - 565, 40, 10);
+	
 	orange();
 	sprite.drawRect(848, 750 - 540, 20, 10);
+	
 	black();
 	sprite.drawTriangle(836, 750 - 550, 836, 750 - 530, 826, 750 - 540, true);
+	
 	red();
 	sprite.drawTriangle(290, 750 - 635, 235, 750 - 635, 265, 750 - 580, true);
+	
 	black();
 	sprite.drawLine(265, 750 - 618, 265, 750 - 600, 6);
 	sprite.drawPoint(265, 750 - 625, 6);
+	
 	blue();
 	sprite.drawCircle(200, 750 - 625, 10, true);
 	sprite.drawLine(200, 750 - 624, 200, 750 - 580, 6);
 	sprite.drawLine(200, 750 - 592, 220, 750 - 592, 4);
 	sprite.drawLine(200, 750 - 600, 220, 750 - 600, 4);
 	sprite.drawLine(200, 750 - 608, 220, 750 - 608, 4);
+	
 	green();
 	sprite.drawRect(120, 750 - 630, 50, 50);
+	
 	black();
 	text = "ECO";
 	sprite.drawText(text.data(), text.size(), 125, 750 - 610, GLUT_BITMAP_HELVETICA_18);
 	glLineWidth(3);
+	
 	orange();
 	simplify_drawQuad(40, 630, 100, 580);
 	text = "+";
 	sprite.drawText(text.data(), text.size(), 45, 750 - 595, GLUT_BITMAP_HELVETICA_18);
 	text = "-";
 	sprite.drawText(text.data(), text.size(), 85, 750 - 595, GLUT_BITMAP_HELVETICA_18);
+	
 	red();
 	sprite.drawCircle(330, 750 - 530, 25, false);
 	sprite.drawLine(330, 750 - 536, 330, 750 - 510, 6);
 	sprite.drawPoint(330, 750 - 545, 6);
+	
 	orange();
 	glLineWidth(4);
 	sprite.drawCircle(265, 750 - 530, 12, false);
@@ -306,6 +335,7 @@ void render(){
 	sprite.drawLine(285, 750 - 540, 285, 750 - 510, 6);
 	sprite.drawPoint(285, 750 - 545, 6);
 	glLineWidth(1);
+	
 	orange();
 	sprite.drawRect(186, 750 - 550, 45, 30);
 	sprite.drawLine(190, 750 - 530, 240, 750 - 530, 8);
