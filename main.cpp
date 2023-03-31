@@ -9,7 +9,6 @@
 using namespace std;
 
 Shape sprite = Shape();
-Shape sprite01 = Shape(100, 100);
 
 string text;
 GLfloat temp_offset;
